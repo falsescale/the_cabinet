@@ -1,0 +1,247 @@
+body {
+  font-family: "GroteMT", sans-serif;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+
+  padding: 20px;
+  letter-spacing: 5px;
+}
+
+img {
+  width: 250px;  /* change this */
+  height: auto;
+}
+
+.home-option {
+  display: block;
+  font-family: "GroteMT", sans-serif;
+  color: inherit;
+
+  letter-spacing: 5px;
+  margin-top: 20px;
+    text-decoration: none;
+
+}
+
+.owner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.owner summary {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  width: 50px;
+  height: 200px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  text-decoration: underline;
+  text-underline-offset: 5px;
+
+}
+.owner-note-content {
+  display: none;
+
+  width: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  background-color: antiquewhite;
+  font-size: 17px;
+  line-height: 20px;
+
+  text-align: left;
+  letter-spacing: 0;
+
+  padding: 0;
+
+  transition: all 0.35s ease;
+}
+
+.owner[open] .owner-note-content {
+  display: block;
+
+  width: clamp(280px, 40vw, 450px);
+  max-height: min(450px, 70vh);
+
+  padding: 10px;
+
+  overflow-y: auto;
+}
+
+.home-option:hover {
+    font-style: italic;
+}
+
+h1, h2 {
+  margin-top: 20px;
+}
+
+body {
+  font-family: "GroteMT", sans-serif;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+/* ===================== SHELF ===================== */
+
+.shelf {
+  display: flex;
+  gap: 10px;
+
+  align-items: flex-start;
+
+  margin-top: 0px;   /* pulls everything closer to top */
+  padding-top: 0;
+
+  justify-content: center;
+}
+
+/* ===================== BOOK (IMPORTANT FIX) ===================== */
+
+.book {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* ===================== SPINE ===================== */
+
+.book summary {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  width: 50px;
+  height: 450px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  text-decoration: underline;
+  text-underline-offset: 5px;
+
+  padding-bottom: 10px;
+}
+
+/* ===================== BOOK PAGE (INLINE EXPANDS BETWEEN SPINES) ===================== */
+
+.book-page {
+  display: none;
+
+  width: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  background-color: antiquewhite;
+
+letter-spacing: 0;
+  font-size: 17px;
+  line-height: 20px;
+
+  text-align: left;
+
+  padding: 0;
+
+  transition: all 0.35s ease;
+
+  /* keeps it aligned with spine height */
+  margin-top: 10px;
+}
+
+/* ===================== OPEN STATE ===================== */
+
+.book[open] .book-page {
+  display: block;
+
+  width: clamp(280px, 40vw, 450px);
+
+  /* key idea: match spine height visually */
+  max-height: min(450px, 70vh);
+
+  padding: 10px;
+
+  overflow-y: auto; /* THIS is what you wanted */
+  scrollbar-width: thin;
+}
+
+
+.drawer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+  margin-top: 30px;
+
+  width: 100%;
+}
+
+.drawer img {
+  width: 280px;
+  height: auto;
+  transform: translate(-1%, -65px); /* moved slightly left */
+
+
+}
+
+.note summary {
+  width: 40px;
+  height: 150px;
+  background: #ffffff; /* slightly different from books */
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0px;
+  text-align: center;
+  letter-spacing: 0px;
+  
+}
+.note-page {
+  margin-top: -95px;
+  margin-left: 60px;
+  line-height: 20px;
+  padding: 10px 15px;
+  font-style: italic;
+  text-decoration: none !important;
+  color: inherit;
+  
+  
+}
+
+.note-page a {
+  font-style: italic;
+  text-decoration: none;
+  color: rgb(0, 179, 255); /* or inherit */
+  
+}
+.note-page a:hover {
+  color: red;
+}
+
+.book-page img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
